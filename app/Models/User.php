@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;//jwt鉴权用的
+use Encore\Admin\Traits\DefaultDatetimeFormat;
 
 class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
+    use DefaultDatetimeFormat;
 
     /**
      * The attributes that are mass assignable.
